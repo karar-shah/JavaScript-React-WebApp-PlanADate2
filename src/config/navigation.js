@@ -8,5 +8,7 @@ export const Navigation = {
     LOGIN: "/login",
     REGISTER: "/register",
     CREATEPASSWORD: "/createPass",
-    BASICINFO: "/basicInfo"
+    BASICINFO: "/basicInfo",
+    YOURPREFE0: "/yourPrefe0",
+    SOON: "/soon",
 };

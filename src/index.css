@@ -22,6 +22,7 @@ body {
     --login_cyan_chadow: 0px 3px 6px var(--clr_shadow);
     --login_white_shadow: 0px 2px 8px -1px var(--clr_shadow);
     --chip_shadow: 0px 3px 6px 0px var(--clr_shadow);
+    --clr_chip_all: rgba(245, 245, 245, 1);
     /* --clr_grey: rgba(0, 0, 0, 1); */
 }
 
@@ -394,23 +395,27 @@ hr {
 }
 
 .create-pass-main-form,
-.bi-main-form  {
+.bi-main-form {
     margin-top: -40px;
 }
 
 /* BASIC INFO */
-.bi-chip input[type="checkbox"] {
+.bi-chip input[type="checkbox"],
+.yp-chip-all input[type="checkbox"],
+.yp-chip-more input[type="checkbox"] {
     appearance: none;
 }
 
-.bi-chip input[type="checkbox"] + label {
+.bi-chip input[type="checkbox"] + label,
+.yp-chip-all input[type="checkbox"] + label,
+.yp-chip-more input[type="checkbox"] + label {
     -webkit-transition: all 100ms ease;
     transition: all 100ms ease;
     font-size: 12px;
     line-height: 15px;
     color: var(--clr_white);
     background: var(--clr_black);
-    opacity: 15%;
+    opacity: 16%;
     -webkit-box-shadow: var(--chip_shadow);
     -moz-box-shadow: var(--chip_shadow);
     box-shadow: var(--chip_shadow);
@@ -422,7 +427,9 @@ hr {
     cursor: pointer;
 }
 
-.bi-chip input[type="checkbox"]:checked + label {
+.bi-chip input[type="checkbox"]:checked + label,
+.yp-chip-all input[type="checkbox"]:checked + label,
+.yp-chip-more input[type="checkbox"]:checked + label {
     -webkit-transition: all 100ms ease;
     transition: all 100ms ease;
     background-color: var(--clr_blue);
@@ -432,8 +439,10 @@ hr {
 .bi-chip-comp {
     margin-bottom: 20px;
 }
-.bi-chip-holder {
+.bi-chip-holder,
+.yourPref-chip-holder {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .bi-chip-head {
@@ -443,6 +452,64 @@ hr {
     margin-bottom: 5px;
 }
 
-.bi-chip {
-    padding-right: 5px;
+.bi-chip,
+.yp-chip-all,
+.yp-chip-more {
+    margin: 5px 5px 5px 0px;
+}
+
+/* YOUR PREFERENCE STYLING */
+.yp-chip-all input[type="checkbox"] + label {
+    transition: all 100ms ease;
+    background: var(--clr_chip_all);
+    color: var(--clr_blue);
+    opacity: 100%;
+    box-shadow: none;
+    font-size: 12px;
+}
+.yp-chip-all input[type="checkbox"]:checked + label {
+    transition: all 100ms ease;
+    background: var(--clr_chip_all);
+    color: var(--clr_blue);
+    opacity: 100%;
+    font-size: 12px;
+    border: 1px solid var(--clr_blue);
+}
+.yp-chip-more input[type="checkbox"] + label {
+    transition: all 100ms ease;
+    background: var(--clr_white);
+    color: var(--clr_blue);
+    border: 1px solid var(--clr_blue);
+    opacity: 100%;
+    box-shadow: none;
+    font-size: 12px;
+}
+.yp-chip-more input[type="checkbox"]:checked + label {
+    transition: all 100ms ease;
+    background: var(--clr_chip_all);
+    color: var(--clr_blue);
+    opacity: 100%;
+    font-size: 12px;
+    border: 1px solid var(--clr_blue);
+}
+
+@media only screen and (max-width: 490px) {
+    .login-container {
+        width: 100%;
+        margin: 0px;
+    }
+    .welcome-cyan-button,
+    .login-cyan-button,
+    .create-pass-cyan-button,
+    .create-pass-cyan-button {
+        width: 100%;
+    }
+    .welcome-white-button,
+    .login-white-button {
+        width: 100%;
+    }
+    /* input {
+        width: 100%;
+        height: 40px;
+    } */
 }

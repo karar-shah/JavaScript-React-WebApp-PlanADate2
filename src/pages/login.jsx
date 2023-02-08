@@ -61,8 +61,12 @@ export const Login = () => {
                             Forget Password?
                         </a>
                     </div>
-
-                    <CyanButton text="Login" classname="login-cyan-button" />
+                    <Link to="/login">
+                        <CyanButton
+                            text="Login"
+                            classname="login-cyan-button"
+                        />
+                    </Link>
                     <hr className="login-horizontal-line" />
                     <a className="login-a-noaccount" href="javascript:void(0)">
                         Don't have an account?

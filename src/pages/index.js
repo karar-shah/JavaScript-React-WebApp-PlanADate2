@@ -8,3 +8,5 @@ export * from "./login.jsx";
 export * from "./register";
 export * from "./createPass";
 export * from "./basicInfo";
+export * from "./yourPrefe0";
+export * from "./soon"

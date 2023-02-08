@@ -3,6 +3,7 @@ import { Route, Routes as Router } from "react-router-dom";
 import { Navigation } from "../config";
 import { Login, Splash, Feature0, Feature1, Feature2 } from "../pages";
 import { Feature3, Welcome, Register, CreatePass, BasicInfo } from "../pages";
+import { YourPrefe0, ComingSoon } from "../pages";
 
 export const Routes = () => {
     return (
@@ -17,6 +18,8 @@ export const Routes = () => {
             <Route path={Navigation.WELCOME} element={<Welcome />} />
             <Route path={Navigation.CREATEPASSWORD} element={<CreatePass />} />
             <Route path={Navigation.BASICINFO} element={<BasicInfo />} />
+            <Route path={Navigation.YOURPREFE0} element={<YourPrefe0 />} />
+            <Route path={Navigation.SOON} element={<ComingSoon />} />
         </Router>
     );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { images } from "../config";
+import { images, Navigation } from "../config";
 import { CyanButton, Chip } from "../components";
 
 export const BasicInfo = () => {
@@ -35,11 +35,12 @@ export const BasicInfo = () => {
                             <Chip name="other1" text="Other" />
                         </div>
                     </div>
-
-                    <CyanButton
-                        text="Next (2/3)"
-                        classname="create-pass-cyan-button"
-                    />
+                    <Link to={Navigation.YOURPREFE0}>
+                        <CyanButton
+                            text="Next (2/3)"
+                            classname="create-pass-cyan-button"
+                        />
+                    </Link>
                 </form>
             </div>
         </div>
