@@ -1,15 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { images, Navigation } from "../config";
-import { CyanButton, Chip } from "../components";
+import { CyanButton, Chip, SuccessModal } from "../components";
 
 export const YourPrefe0 = () => {
+    const navigation_1 = useNavigate();
+
+    const [showModal, setShowModal] = useState(false);
+
+    const closeModel = () => {
+        setShowModal(false);
+        navigation_1(Navigation.FORGETPASS);
+    };
+
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        openModal();
+    };
+
     return (
         <div className="login-wrapper">
             <div className="login-container">
                 <img className="login-logo" src={images.logo} alt="main logo" />
 
-                <form className="register-main-form">
+                <form className="register-main-form" onSubmit={submitHandler}>
                     <h1 className="login-heading">Your Prefercences</h1>
                     <p className="logo-subheading">
                         Let us know your preference so you can have a best date.
@@ -93,13 +111,20 @@ export const YourPrefe0 = () => {
                             />
                         </div>
                     </div>
-                    <Link to={Navigation.SOON}>
-                        <CyanButton
-                            text="Next (3/3)"
-                            classname="create-pass-cyan-button"
-                        />
-                    </Link>
+                    {/* <Link to={Navigation.SOON}> */}
+                    <CyanButton
+                        text="Next (3/3)"
+                        classname="create-pass-cyan-button"
+                    />
+                    {/* </Link> */}
                 </form>
+                <SuccessModal
+                    label="All Done!"
+                    message="Your account has been successfully registered. You can now proceed a trip or a reservation for your date."
+                    icon={images.check_cyan_icon}
+                    open={showModal}
+                    closeModel={closeModel}
+                />
             </div>
         </div>
     );

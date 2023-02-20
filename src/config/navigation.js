@@ -11,4 +11,5 @@ export const Navigation = {
     BASICINFO: "/basicInfo",
     YOURPREFE0: "/yourPrefe0",
     SOON: "/soon",
+    FORGETPASS: "/forgetPass"
 };

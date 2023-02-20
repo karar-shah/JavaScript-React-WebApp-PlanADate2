@@ -9,4 +9,5 @@ export * from "./register";
 export * from "./createPass";
 export * from "./basicInfo";
 export * from "./yourPrefe0";
-export * from "./soon"
+export * from "./soon";
+export * from "./forgetPass";
